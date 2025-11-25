@@ -16,6 +16,6 @@ class BaseAI:
         return create_image_block(mime_type=image.mime, base64=image.b64)
 
     def buildTextContentBlock(self, text: Text):
-        return create_text_block(text=f"""------- TITLE: {text.title} --------\n{text.text}\n""")
+        return create_text_block(text=f"""------- TITLE: {text.name} --------\n{text.text}\n""")
 
 
