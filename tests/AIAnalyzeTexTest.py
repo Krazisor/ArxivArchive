@@ -22,7 +22,7 @@ async def main():
     workflow = ArxivDailyWorkflow('cs.AI')
     metadata = await workflow._generate_metadata(article)
     article.metadata = metadata
-    res = await workflow._aiAnalyzeOne(article)
+    res = await workflow._ai_analyze_one(article)
     print(res.content[1].get('text'))
 if __name__ == '__main__':
     asyncio.run(main())

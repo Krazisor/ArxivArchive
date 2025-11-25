@@ -13,4 +13,4 @@ if __name__ == '__main__':
     id = 'resp_0d1388c6bfaf1c250069254929d3d08197b923eb7a0fe80979',
     usage_metadata = {'input_tokens': 22523, 'output_tokens': 5548, 'total_tokens': 28071,
                       'input_token_details': {'cache_read': 0}, 'output_token_details': {'reasoning': 0}})
-    print(msg.content[1].get('text'))
+    print(msg.text)

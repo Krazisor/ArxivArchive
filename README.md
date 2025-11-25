@@ -10,4 +10,4 @@
 - 最大向AI发送`MAX_FIGURE_NUM`张图片 可通过环境变量配置
 
 ## Notes
-- 分类器 定义 `JUDGER_MODEL` 和 `RESEARCH_PERFER` 来判断是否要深入阅读,减少无用阅读量和`token` 
+- 分类器 定义 `JUDGER_MODEL` 和 `RESEARCH_PREFER` `RESEARCH_NOT_PREFER` 来判断是否要深入阅读,减少无用阅读量和`token` 
