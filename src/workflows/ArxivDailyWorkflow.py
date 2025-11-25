@@ -24,7 +24,7 @@ def _setup_logger(category: str) -> logging.Logger:
     为指定 category 创建一个带滚动文件的 logger
     """
     today_str = TimeUtils.current_date_str()
-    log_dir = Path(Config.ANALYZE_REPORT_PATH )/ today_str / "logs"
+    log_dir = Path(Config.ANALYZE_REPORT_PATH) / today_str / "logs"
     log_dir.mkdir(parents=True, exist_ok=True)
 
     logger = logging.getLogger(f"arxiv_daily.{category}")
@@ -75,50 +75,50 @@ class AsyncTqdmLoggingHandler(logging.StreamHandler):
 # ------------------------------------------------------------------
 class ArxivDailyWorkflow:
     def __init__(
-        self,
-        category: Literal[
-            "cs.AI",
-            "cs.AR",
-            "cs.CC",
-            "cs.CE",
-            "cs.CG",
-            "cs.CL",
-            "cs.CR",
-            "cs.CV",
-            "cs.CY",
-            "cs.DB",
-            "cs.DC",
-            "cs.DL",
-            "cs.DM",
-            "cs.DS",
-            "cs.ET",
-            "cs.FL",
-            "cs.GL",
-            "cs.GR",
-            "cs.GT",
-            "cs.HC",
-            "cs.IR",
-            "cs.IT",
-            "cs.LG",
-            "cs.LO",
-            "cs.MA",
-            "cs.MM",
-            "cs.MS",
-            "cs.NA",
-            "cs.NE",
-            "cs.NI",
-            "cs.OH",
-            "cs.OS",
-            "cs.PF",
-            "cs.PL",
-            "cs.RO",
-            "cs.SC",
-            "cs.SD",
-            "cs.SE",
-            "cs.SI",
-            "cs.SY",
-        ],
-        batchsize: int = 5,
+            self,
+            category: Literal[
+                "cs.AI",
+                "cs.AR",
+                "cs.CC",
+                "cs.CE",
+                "cs.CG",
+                "cs.CL",
+                "cs.CR",
+                "cs.CV",
+                "cs.CY",
+                "cs.DB",
+                "cs.DC",
+                "cs.DL",
+                "cs.DM",
+                "cs.DS",
+                "cs.ET",
+                "cs.FL",
+                "cs.GL",
+                "cs.GR",
+                "cs.GT",
+                "cs.HC",
+                "cs.IR",
+                "cs.IT",
+                "cs.LG",
+                "cs.LO",
+                "cs.MA",
+                "cs.MM",
+                "cs.MS",
+                "cs.NA",
+                "cs.NE",
+                "cs.NI",
+                "cs.OH",
+                "cs.OS",
+                "cs.PF",
+                "cs.PL",
+                "cs.RO",
+                "cs.SC",
+                "cs.SD",
+                "cs.SE",
+                "cs.SI",
+                "cs.SY",
+            ],
+            batchsize: int = 5,
     ):
         self.category = category
         self.batchsize = batchsize
@@ -291,7 +291,11 @@ class ArxivDailyWorkflow:
         try:
             with open(outfile, "w", encoding="utf-8") as f:
                 json.dump(
-                    self.crawlResult.model_dump(),
+                    self.crawlResult.model_dump(exclude={
+                        "articles": {
+                            "__all__": {"metadata"}
+                        }
+                    }),
                     f,
                     ensure_ascii=False,
                     cls=CustomEncoder,
