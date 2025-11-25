@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from pydantic import HttpUrl
 
 from src.crawl.BaseCrawlService import BaseCrawlService
-from src.crawl.model.Arxiv import ArxivArticle, ArxivPageResult, ArxivMetaData, Tex
+from src.models.Arxiv import ArxivArticle, ArxivPageResult, ArxivMetaData, Tex
 from src.models.Content import FigureB64
 
 

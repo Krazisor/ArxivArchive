@@ -3,7 +3,7 @@ import datetime
 
 from pydantic import HttpUrl
 
-from src.crawl.model.Arxiv import ArxivArticle, ArxivMetaData
+from src.models.Arxiv import ArxivArticle, ArxivMetaData
 from src.workflows.ArxivDailyWorkflow import ArxivDailyWorkflow
 
 async def main():

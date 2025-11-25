@@ -3,7 +3,7 @@ from typing import Literal
 from src.ai.ArxivAnalyzer import ArxivAnalyzer
 from src.config.Config import Config
 from src.crawl.ArxivDailyCrawlService import ArxivDailyCrawlService
-from src.crawl.model.Arxiv import ArxivPageResult, ArxivArticle
+from src.models.Arxiv import ArxivPageResult, ArxivArticle
 
 
 class ArxivDailyWorkflow:

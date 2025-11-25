@@ -13,7 +13,7 @@ import pymupdf
 import httpx
 
 from src.config.Config import Config
-from src.crawl.model.Arxiv import FigureB64
+from src.models.Arxiv import FigureB64
 
 
 class BaseCrawlService(ABC):

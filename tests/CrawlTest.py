@@ -2,7 +2,7 @@ from src.crawl.ArxivDailyCrawlService import ArxivDailyCrawlService
 
 
 async def main():
-    service = ArxivDailyCrawlService(category='cs.AI')
+    service = ArxivDailyCrawlService(category='cs.SD')
     res = await service.crawl()
     print(res)
     print(len(res.articles))

@@ -9,7 +9,7 @@ from src.models.Content import FigureB64, Text
 
 
 class BaseAI:
-    model = ChatOpenAI(api_key=Config.OPENAI_API_KEY, base_url=Config.OPENAI_BASE_URL, model=Config.OPENAI_MODEL,
+    model = ChatOpenAI(api_key=Config.OPENAI_API_KEY, base_url=Config.OPENAI_BASE_URL,
                        use_responses_api=True)
 
     def buildB64ImageContent(self, image: FigureB64):
