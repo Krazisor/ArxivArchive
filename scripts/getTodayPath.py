@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from src.config.Config import Config
 from src.utils.TimeUtils import TimeUtils
 
