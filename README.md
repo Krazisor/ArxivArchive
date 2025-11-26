@@ -1,5 +1,6 @@
 # Arxiv 每日论文爬取 + AI 解析方案
-
+# 使用
+> Fork 本项目 , 参考下文设置action的secret 即可每日定时运行, watch 你的项目 (custom -> issue) 即可每日推送的时候自动邮件提醒
 ## Notes
 > Arxiv 于 美国东部时间 00:00:00 (UTC−5) == 中国时间 13:00:00 CST（同一天，下午 1 点）推送当日的 `new submission`
 
