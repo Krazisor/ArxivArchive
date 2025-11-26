@@ -1,10 +1,14 @@
+from pathlib import Path
+
 import pandas as pd
 from pydantic import BaseModel
 
+from src.config.Config import Config
 from src.utils.AggUtils import AggregationUtils
+from src.utils.TimeUtils import TimeUtils
 
 
-class ArxivDailyCombineWorkflow:
+class ArxivDailyPublishWorkflow:
     class PublishResult(BaseModel):
         arxiv_id: str
         english_title: str
@@ -14,7 +18,7 @@ class ArxivDailyCombineWorkflow:
         comment: str
         download_url: str
 
-    def combine_json_to_markdown(self):
+    def _combine_json_to_markdown(self):
         jsons = AggregationUtils().agg_all_today_json()
         finalMarkdown = ''
         for j in jsons:
@@ -31,3 +35,10 @@ class ArxivDailyCombineWorkflow:
             finalMarkdown += f'{dataframe.to_markdown(index=False)}\n'
             finalMarkdown += '---\n'
         return finalMarkdown
+
+    def publish_markdown(self):
+        markdown = self._combine_json_to_markdown()
+        path = Path(Config.ANALYZE_REPORT_PATH)/TimeUtils.current_date_str()/'publish.md'
+        with open(path,'w',encoding='utf-8') as f:
+            f.write(markdown)
+
