@@ -13,10 +13,6 @@ jobs:
       issues: write
       contents: read
 
-    # 在 job 级别设置 UV_SYSTEM_PYTHON，使 uv pip 在系统 Python 中安装（可选，根据项目需要）
-    env:
-      UV_SYSTEM_PYTHON: 1
-
     steps:
       - name: 1. Checkout repository
         uses: actions/checkout@v4
