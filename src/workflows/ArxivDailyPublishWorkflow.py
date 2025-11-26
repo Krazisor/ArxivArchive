@@ -33,12 +33,11 @@ class ArxivDailyPublishWorkflow:
                     comment=a.judgerResult.comment.replace('\n', '<br/>'),
                     download_url=str(a.pdf_url)
                 ).model_dump()
-
                 finalMarkdown += f"- 论文ID: {pr.get('arxiv_id', '')}\n"
+                finalMarkdown += f"- **是否值得阅读: {pr.get('worth_read', '')}**\n"
                 finalMarkdown += f"- 英文标题: {pr.get('english_title', '')}\n"
                 finalMarkdown += f"- 中文标题: {pr.get('chinese_title', '')}\n"
                 finalMarkdown += f"- 中文摘要: {pr.get('chinese_abstract', '')}\n"
-                finalMarkdown += f"- 是否值得阅读: {pr.get('worth_read', '')}\n"
                 finalMarkdown += f"- 评论: {pr.get('comment', '')}\n"
                 finalMarkdown += f"- 下载链接: {pr.get('download_url', '')}\n"
                 finalMarkdown += '\n'
