@@ -24,6 +24,7 @@ jobs:
       RESEARCH_PREFER: ${{ secrets.RESEARCH_PREFER }}
       RESEARCH_NOT_PREFER: ${{ secrets.RESEARCH_NOT_PREFER }}
       PREFER_CATEGORY: ${{ secrets.PREFER_CATEGORY }}
+      ONLY_INCLUDE_WORTH_READ: ${{secrets.ONLY_INCLUDE_WORTH_READ}}
 
     steps:
       - name: 1. Checkout repository
