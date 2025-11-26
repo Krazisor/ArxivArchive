@@ -38,7 +38,7 @@ class ArxivDailyPublishWorkflow:
 
     def publish_markdown(self):
         markdown = self._combine_json_to_markdown()
-        path = Path(Config.ANALYZE_REPORT_PATH)/TimeUtils.current_date_str()/'publish.md'
+        path = Path(Config.ANALYZE_REPORT_PATH)/TimeUtils.current_date_str()/f'{TimeUtils.current_date_str()}-Arxiv.md'
         with open(path,'w',encoding='utf-8') as f:
             f.write(markdown)
         return markdown
