@@ -14,6 +14,7 @@ from src.crawl.ArxivDailyCrawlService import ArxivDailyCrawlService
 from src.models.Arxiv import ArxivPageResult, ArxivArticle
 from src.models.Encoder import CustomEncoder
 from src.utils.TimeUtils import TimeUtils
+from src.utils.helperTypes import arxivCategory
 
 
 # ------------------------------------------------------------------
@@ -76,48 +77,7 @@ class AsyncTqdmLoggingHandler(logging.StreamHandler):
 class ArxivDailyWorkflow:
     def __init__(
             self,
-            category: Literal[
-                "cs.AI",
-                "cs.AR",
-                "cs.CC",
-                "cs.CE",
-                "cs.CG",
-                "cs.CL",
-                "cs.CR",
-                "cs.CV",
-                "cs.CY",
-                "cs.DB",
-                "cs.DC",
-                "cs.DL",
-                "cs.DM",
-                "cs.DS",
-                "cs.ET",
-                "cs.FL",
-                "cs.GL",
-                "cs.GR",
-                "cs.GT",
-                "cs.HC",
-                "cs.IR",
-                "cs.IT",
-                "cs.LG",
-                "cs.LO",
-                "cs.MA",
-                "cs.MM",
-                "cs.MS",
-                "cs.NA",
-                "cs.NE",
-                "cs.NI",
-                "cs.OH",
-                "cs.OS",
-                "cs.PF",
-                "cs.PL",
-                "cs.RO",
-                "cs.SC",
-                "cs.SD",
-                "cs.SE",
-                "cs.SI",
-                "cs.SY",
-            ],
+            category:arxivCategory,
             batchsize: int = 5,
     ):
         self.category = category

@@ -23,6 +23,8 @@ JUDGER_MODEL=gpt-5-mini
 RESEARCH_PREFER=云原生,人工智能领域,AI+运维(SRE),多智能体系统,操作系统方向
 RESEARCH_NOT_PREFER=纯算法领域,包括纯推荐算法,大模型Transformer新算法,视觉识别cv等
 PREFER_CATEGORY=cs.MA,cs.AI,cs.OS
+ONLY_INCLUDE_WORTH_READ=1#1为只提交值得阅读的部分,0反之
+
 ```
 > 目前还没有设置精读文章的板块,后续可以加上
 

@@ -23,6 +23,8 @@ class ArxivDailyPublishWorkflow:
         for j in jsons:
             finalMarkdown += f"# {j.category}\n"
             for a in j.articles:
+                if Config.ONLY_INCLUDE_WORTH_READ and not a.judgerResult.worth_read:
+                    continue
                 finalMarkdown += f'## {a.title}\n'
                 pr = self.PublishResult(
                     arxiv_id=a.arxiv_id,
